@@ -19,7 +19,7 @@ pipeline
         {
             steps
             {
-                sh ' cp -R /var/lib/jenkins/workspace/job2/target/* /opt/apache-tomcat-10.0.10/webapps/ '
+                sh ' cp -R /var/lib/jenkins/workspace/declarative/target/* /opt/apache-tomcat-10.0.10/webapps/ '
             }
             
         }

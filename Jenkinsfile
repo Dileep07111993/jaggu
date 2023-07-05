@@ -4,17 +4,17 @@ pipeline
     stages
     {
       
-         stage ('building the code using maven')
-        {
-            steps
-            {
-            withMaven(maven : 'MAVEN_HOME')
-            {
-                 sh 'mvn install'
-            }
-            }
-            
-        }
+     #    stage ('building the code using maven')
+     #   {
+     #       steps
+     #       {
+     #       withMaven(maven : 'MAVEN_HOME')
+     #       {
+     #            sh 'mvn install'
+     #       }
+     #       }
+     #       
+     #   }
         stage ('deploy the code ')
         {
             steps
@@ -23,5 +23,14 @@ pipeline
             }
             
         }
+        stage('SCM') {
+    checkout scm
+       }
+  stage('SonarQube Analysis') {
+    def mvn = tool 'MAVEN_HOME';
+    withSonarQubeEnv() {
+      sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=demo -Dsonar.projectName='demo'"
+    }
+  }
     }
 }

@@ -4,17 +4,6 @@ pipeline
     stages
     {
       
-     #    stage ('building the code using maven')
-     #   {
-     #       steps
-     #       {
-     #       withMaven(maven : 'MAVEN_HOME')
-     #       {
-     #            sh 'mvn install'
-     #       }
-     #       }
-     #       
-     #   }
         stage ('deploy the code ')
         {
             steps

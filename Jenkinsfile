@@ -17,7 +17,7 @@ pipeline
         {
             steps
             {
-                sh ' cp -R /var/lib/jenkins/workspace/declarative/target/* /opt/apache-tomcat-10.0.17/webapps/ '
+                sh 'sudo cp -R /var/lib/jenkins/workspace/Declarative_pipeline/target/* /opt/apache-tomcat-10.1.17/webapps/ '
             }
             
         }

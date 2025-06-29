@@ -13,7 +13,7 @@ pipeline
                 }
             }
         }
-        #stage ('deploy the code ')
+#        stage ('deploy the code ')
         #{
         #    steps
         #    {

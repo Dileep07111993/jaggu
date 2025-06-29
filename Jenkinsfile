@@ -13,13 +13,13 @@ pipeline
                 }
             }
         }
-        stage ('deploy the code ')
-        {
-            steps
-            {
-                sh 'cp -R /var/lib/jenkins/workspace/Declarative_pipeline/target/* /opt/apache-tomcat-10.1.40/webapps/ '
-            }
+        #stage ('deploy the code ')
+        #{
+        #    steps
+        #    {
+        #        sh 'cp -R /var/lib/jenkins/workspace/$JOB_NAME/target/* /opt/apache-tomcat-10.1.40/webapps/ '
+        #    }
             
-        }
+        #}
     }
 }
